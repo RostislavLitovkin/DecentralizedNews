@@ -4,15 +4,25 @@ import { Router } from './router/Router';
 import { Layout } from './components/Layout';
 import { FlexLayout } from './styled/FlexLayout';
 import { SolanaWallet } from './components/SolanaWallet';
+import styled from 'styled-components';
+
+const MainLayout = styled('div')`
+  display: flex;
+  flex-direction: column;
+
+  background-color: #111;
+  height: 100vh;
+  width: 100vw;
+`
 
 function App() {
   return (
     <SolanaWallet>
-      <FlexLayout>
+      <MainLayout>
         <Layout />
         <br />
         <Router />
-      </FlexLayout>
+      </MainLayout>
     </SolanaWallet>
   );
 }
