@@ -14,6 +14,8 @@ import { IDL } from '../idl/idl'
 import * as anchor from "@project-serum/anchor";
 import { DecentralizedNews } from "../types/decentralized_news"
 import { idlAddress } from "@project-serum/anchor/dist/cjs/idl"
+import { useNavigate } from "react-router-dom"
+import { Button } from "antd"
 
 const Navbar = styled('div')`
     background-color: #333a;
@@ -47,6 +49,15 @@ const CustomSolanaWalletMultiButton = styled(WalletMultiButton)`
     &:hover {
         background-color: #42f5a1;
     }
+`
+
+const BeautifulButton = styled(Button)`
+    background-color: #42f5a1;
+    height: 60px;
+    border-radius: 60px;
+    width: 320px;
+    font-weight: 900;
+    font-size: 30px;
 `
 
 const opts = {
@@ -135,10 +146,6 @@ export const Layout: React.FC = () => {
     return (
         <Navbar>
             <Title>Decentralized news</Title>
-            {connected && <button onClick={async () => {
-                await getState();
-
-            }}>Balance: {state}</button>}
             <CustomSolanaWalletMultiButton />
         </Navbar>
     )

@@ -12,7 +12,6 @@ const Layout = styled('img')`
     width: 90vw;
     max-height: 600px;
     height: 60vw;
-    display: flex;
 `
 
 const Title = styled('div')`
@@ -21,7 +20,6 @@ const Title = styled('div')`
     font-weight: 900;
     color: white;
 `
-
 export const ArticleThumbnail: React.FC<ArticleThumbnailProps> = ({
     index,
     title,

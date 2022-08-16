@@ -56,19 +56,19 @@ export const ArticlesList: React.FC = () => {
         let programState = await program.account.state.fetch(statePDA);
 
         const totalArticles = programState.totalArticles
-
-
         let articles = []
 
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < totalArticles; i++) {
             const [articlePDA,] = await anchor.web3.PublicKey
                 .findProgramAddress(
                     [
-                        anchor.utils.bytes.utf8.encode(programState.totalArticles.toString()),
+                        anchor.utils.bytes.utf8.encode(i.toString()),
                     ],
                     program.programId
                 );
-            articles.push(<ArticleThumbnail key={i} title="title" image="http://rostislavlitovkin.pythonanywhere.com/AboutDevelopment/Image/cryptopress1.png" index={i}></ArticleThumbnail>)
+            const articleData = await program.account.article.fetch(articlePDA);
+
+            articles.push(<ArticleThumbnail key={i} title={articleData.title} image={articleData.image} index={i}></ArticleThumbnail>)
             articles.push(<br key={i + 10000}></br>)
         }
 
@@ -84,8 +84,6 @@ export const ArticlesList: React.FC = () => {
 
     return (
         <ListLayout>
-            AHOOJSSSSSSSSSSSSSSSSSSSSSSss
-            <>{allArticlesArray?.length}</>
             {allArticlesArray}
         </ListLayout>
     )

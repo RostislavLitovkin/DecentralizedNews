@@ -1,5 +1,5 @@
 export interface ArticleDto {
     title: string
-    titleImage?: string
-    description?: string
+    titleImage: string
+    description: string
 }

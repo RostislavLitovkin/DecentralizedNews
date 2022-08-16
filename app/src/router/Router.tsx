@@ -2,6 +2,7 @@ import { BrowserRouter, Routes as BaseRoutes, Route } from 'react-router-dom'
 import { ArticlePage } from '../components/ArticlePage'
 import { ErrorPage } from '../components/ErrorPage'
 import { MainPage } from '../components/MainPage'
+import { NewArticlePage } from '../components/NewArticlePage'
 
 export const Router: React.FC = () => {
     return (
@@ -9,7 +10,8 @@ export const Router: React.FC = () => {
             <BaseRoutes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/Error" element={<ErrorPage />} />
-                <Route path="/Article/:pubkey" element={<ArticlePage />} />
+                <Route path="/NewArticle" element={<NewArticlePage />} />
+                <Route path="/Article/:index" element={<ArticlePage />} />
             </BaseRoutes>
         </BrowserRouter>
     )
