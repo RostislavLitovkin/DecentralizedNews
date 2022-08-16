@@ -35,10 +35,20 @@ const Navbar = styled('div')`
     justify-content: space-between;
 `
 
-const Title = styled('div')`
+const Title = styled('a')`
     font-weight: 900;
     font-size: 40px;
     margin: 20px;
+    color: white;
+    text-decoration: none !important;
+`
+
+const Link = styled('a')`
+    font-weight: 700;
+    font-size: 30px;
+    margin: 20px;
+    text-decoration: none !important;
+    color: #ddd;
 `
 
 const CustomSolanaWalletMultiButton = styled(WalletMultiButton)`
@@ -145,7 +155,8 @@ export const Layout: React.FC = () => {
 
     return (
         <Navbar>
-            <Title>Decentralized news</Title>
+            <Title href="/">Decentralized news</Title>
+            <Link href="/NewArticle">Create new article</Link>
             <CustomSolanaWalletMultiButton />
         </Navbar>
     )
