@@ -1,13 +1,19 @@
 [features]
 seeds = false
 [programs.localnet]
-decentralized_news = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+decentralized_news = "GKQz8VpfXHbj2hXeazQHq1YzN8XvZyQQM2rhpHYJfake"
+
+[programs.devnet]
+decentralized_news = "GKQz8VpfXHbj2hXeazQHq1YzN8XvZyQQM2rhpHYJfake"
+
+[programs.mainnet]
+decentralized_news = "GKQz8VpfXHbj2hXeazQHq1YzN8XvZyQQM2rhpHYJfake"
 
 [registry]
 url = "https://anchor.projectserum.com"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "/home/rostik/.config/solana/id.json"
 
 [scripts]

@@ -46,7 +46,7 @@ export const SolanaWallet: React.FC<{ children: React.ReactNode }> = ({ children
                 appIdentity: {
                     name: 'Decentralized news',
                     uri: 'http://localhost:3000/',
-                    icon: 'ě',
+                    icon: 'http://localhost:3000/',
                 },
                 authorizationResultCache: createDefaultAuthorizationResultCache(),
                 cluster: 'devnet',
