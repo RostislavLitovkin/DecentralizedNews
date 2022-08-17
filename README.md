@@ -16,6 +16,9 @@ The program is deployed on Devnet.
 
 
 [How to run]:
+
 cd app
+
 npm install
+
 npm start
