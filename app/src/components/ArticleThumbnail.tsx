@@ -8,9 +8,9 @@ interface ArticleThumbnailProps {
 
 const Layout = styled('img')`
     object-fit: cover;
-    max-width: 900px;
+    max-width: 1200px;
     width: 90vw;
-    max-height: 600px;
+    max-height: 800px;
     height: 60vw;
 `
 

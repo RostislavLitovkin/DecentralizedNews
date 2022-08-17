@@ -70,16 +70,11 @@ const BeautifulButton = styled(Button)`
     font-size: 30px;
 `
 
-const opts = {
-    preflightCommitment: "recent",
-};
-
 export const Layout: React.FC = () => {
     const { connection } = useConnection();
-    const { publicKey, connected, signAllTransactions, signTransaction } = useWallet();
+    const { publicKey, signAllTransactions, signTransaction } = useWallet();
 
     const [balance, setBalance] = useState(0)
-    const [state, setState] = useState(-2);
     const [program, setProgram] = useState<Program<DecentralizedNews>>();
 
     const getBalance = useCallback(async () => {
@@ -122,11 +117,9 @@ export const Layout: React.FC = () => {
             systemProgram: SystemProgram.programId,
         }).signers([]).rpc();
 
-        console.log("Došlo to sem")
-
         let programState = await program.account.state.fetch(statePDA);
 
-        setState(programState.totalArticles)
+        //setState(programState.totalArticles)
     }, [publicKey])
 
     const getState = useCallback(async () => {
@@ -146,7 +139,8 @@ export const Layout: React.FC = () => {
 
         let programState = await program.account.state.fetch(statePDA);
 
-        setState(programState.totalArticles)
+        console.log(programState)
+        //setState(programState.totalArticles)
     }, [publicKey, process.env.REACT_APP_PROGRAM_ID, program])
 
     useEffect(() => {
