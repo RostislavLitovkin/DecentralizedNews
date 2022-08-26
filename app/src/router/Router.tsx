@@ -6,7 +6,7 @@ import { NewArticlePage } from '../components/NewArticlePage'
 
 export const Router: React.FC = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <BaseRoutes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/Error" element={<ErrorPage />} />
