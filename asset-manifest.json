@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DecentralizedNews/static/css/main.d73d0f6c.css",
-    "main.js": "/DecentralizedNews/static/js/main.871d72db.js",
+    "main.js": "/DecentralizedNews/static/js/main.4a2112d7.js",
     "static/js/316.c1ca16be.chunk.js": "/DecentralizedNews/static/js/316.c1ca16be.chunk.js",
     "static/js/7.71a31b96.chunk.js": "/DecentralizedNews/static/js/7.71a31b96.chunk.js",
     "static/js/807.03867ac5.chunk.js": "/DecentralizedNews/static/js/807.03867ac5.chunk.js",
@@ -18,6 +18,6 @@
   },
   "entrypoints": [
     "static/css/main.d73d0f6c.css",
-    "static/js/main.871d72db.js"
+    "static/js/main.4a2112d7.js"
   ]
 }
