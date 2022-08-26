@@ -1,8 +1,7 @@
 import { AnchorProvider, Program } from "@project-serum/anchor";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { Button, Col, Row } from "antd";
+import { Button } from "antd";
 import { Formik } from "formik";
-import { Input } from "formik-antd";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ArticleDto } from "../dto/ArticleDto";
@@ -53,7 +52,7 @@ const FormSchema = Yup.object({
 export const NewArticlePage: React.FC = () => {
     const { connection } = useConnection();
     const navigate = useNavigate()
-    const { publicKey, connected, signAllTransactions, signTransaction } = useWallet();
+    const { publicKey, signAllTransactions, signTransaction } = useWallet();
     const [program, setProgram] = useState<Program<DecentralizedNews>>();
 
     useEffect(() => {
@@ -71,7 +70,7 @@ export const NewArticlePage: React.FC = () => {
         const a = JSON.stringify(IDL)
         const b = JSON.parse(a)
         setProgram(new Program<DecentralizedNews>(b, process.env.REACT_APP_PROGRAM_ID, provider));
-    }, [publicKey, signAllTransactions, signTransaction, process.env.REACT_APP_PROGRAM_ID])
+    }, [publicKey, signAllTransactions, signTransaction, connection])
 
 
 

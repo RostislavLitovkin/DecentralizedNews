@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react"
 import { IDL } from "../idl/idl";
 import { DecentralizedNews } from "../types/decentralized_news";
 import * as anchor from "@project-serum/anchor";
-import { SystemProgram, PublicKey } from "@solana/web3.js"
+import { PublicKey } from "@solana/web3.js"
 import { ArticleThumbnail } from "./ArticleThumbnail";
 import styled from "styled-components";
 
@@ -19,7 +19,7 @@ const ListLayout = styled('div')`
 
 export const ArticlesList: React.FC = () => {
     const { connection } = useConnection();
-    const { publicKey, connected, signAllTransactions, signTransaction } = useWallet();
+    const { publicKey, signAllTransactions, signTransaction } = useWallet();
     const [program, setProgram] = useState<Program<DecentralizedNews>>();
     const [allArticlesArray, setAllArticlesArray] = useState<JSX.Element[]>();
 
@@ -38,7 +38,7 @@ export const ArticlesList: React.FC = () => {
         const a = JSON.stringify(IDL)
         const b = JSON.parse(a)
         setProgram(new Program<DecentralizedNews>(b, process.env.REACT_APP_PROGRAM_ID, provider));
-    }, [publicKey, signAllTransactions, signTransaction, process.env.REACT_APP_PROGRAM_ID])
+    }, [publicKey, signAllTransactions, signTransaction, connection])
 
 
     const loadArticles = useCallback(async () => {
@@ -76,11 +76,11 @@ export const ArticlesList: React.FC = () => {
         if (articles) setAllArticlesArray(articles);
 
 
-    }, [process.env.REACT_APP_PROGRAM_ID, program])
+    }, [program])
 
     useEffect(() => {
         loadArticles()
-    }, [program])
+    }, [program, loadArticles])
 
     return (
         <ListLayout>

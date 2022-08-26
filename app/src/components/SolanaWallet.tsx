@@ -1,25 +1,15 @@
-import React, { FC, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
-    CoinbaseWalletAdapter,
-    GlowWalletAdapter,
     PhantomWalletAdapter,
-    SlopeWalletAdapter,
     SolflareWalletAdapter,
-    SolletExtensionWalletAdapter,
-    SolletWalletAdapter,
-    TorusWalletAdapter,
-    TokenaryWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
 import {
-    WalletModalProvider,
-    WalletDisconnectButton,
-    WalletMultiButton
+    WalletModalProvider
 } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 import { createDefaultAddressSelector, createDefaultAuthorizationResultCache, SolanaMobileWalletAdapter } from '@solana-mobile/wallet-adapter-mobile';
-import App from '../App';
 
 // Default styles that can be overridden by your app
 require('@solana/wallet-adapter-react-ui/styles.css');

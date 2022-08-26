@@ -42,10 +42,9 @@ const Description = styled('div')`
 export const ArticlePage: React.FC = () => {
     const [article, setArticle] = useState<ArticleDto>()
     const { connection } = useConnection();
-    const { publicKey, connected, signAllTransactions, signTransaction } = useWallet();
+    const { publicKey, signAllTransactions, signTransaction } = useWallet();
     const params = useParams()
     const [program, setProgram] = useState<Program<DecentralizedNews>>();
-    const [allArticlesArray, setAllArticlesArray] = useState<JSX.Element[]>();
 
     useEffect(() => {
         if (!(publicKey && signAllTransactions && signTransaction && process.env.REACT_APP_PROGRAM_ID)) {
@@ -62,7 +61,7 @@ export const ArticlePage: React.FC = () => {
         const a = JSON.stringify(IDL)
         const b = JSON.parse(a)
         setProgram(new Program<DecentralizedNews>(b, process.env.REACT_APP_PROGRAM_ID, provider));
-    }, [publicKey, signAllTransactions, signTransaction, process.env.REACT_APP_PROGRAM_ID])
+    }, [publicKey, signAllTransactions, signTransaction, connection])
     
 
     const loadArticle = useCallback(async () => {
@@ -83,11 +82,11 @@ export const ArticlePage: React.FC = () => {
         let articleData = await program.account.article.fetch(articlePDA);
 
         setArticle({title: articleData.title, description: articleData.description, titleImage: articleData.image })
-    }, [process.env.REACT_APP_PROGRAM_ID, program])
+    }, [program, params.index])
 
     useEffect(() => {
         loadArticle()
-    }, [program])
+    }, [program, loadArticle])
     
     return (
         <Layout>
