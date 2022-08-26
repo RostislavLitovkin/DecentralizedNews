@@ -48,8 +48,8 @@ const CustomSolanaWalletMultiButton = styled(WalletMultiButton)`
 export const Layout: React.FC = () => {
     return (
         <Navbar>
-            <Title href="/">Decentralized news</Title>
-            <Link href="/NewArticle">Create new article</Link>
+            <Title href={process.env.PUBLIC_URL}>Decentralized news</Title>
+            <Link href={process.env.PUBLIC_URL.concat("/NewArticle")}>Create new article</Link>
             <CustomSolanaWalletMultiButton />
         </Navbar>
     )

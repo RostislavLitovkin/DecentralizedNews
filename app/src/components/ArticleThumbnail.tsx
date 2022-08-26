@@ -26,7 +26,7 @@ export const ArticleThumbnail: React.FC<ArticleThumbnailProps> = ({
     image,
 }) => {
     return (
-        <a href={ "/Article/" + index } style={{textDecoration: "none"}}>
+        <a href={ process.env.PUBLIC_URL.concat("/Article/") + index } style={{textDecoration: "none"}}>
             <Layout src={image}>
                 
             </Layout>
