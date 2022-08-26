@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/DecentralizedNews/static/css/main.d73d0f6c.css",
+    "main.js": "/DecentralizedNews/static/js/main.ca0ef24a.js",
+    "static/js/316.c1ca16be.chunk.js": "/DecentralizedNews/static/js/316.c1ca16be.chunk.js",
+    "static/js/7.71a31b96.chunk.js": "/DecentralizedNews/static/js/7.71a31b96.chunk.js",
+    "static/js/807.03867ac5.chunk.js": "/DecentralizedNews/static/js/807.03867ac5.chunk.js",
+    "static/js/261.0dd680ae.chunk.js": "/DecentralizedNews/static/js/261.0dd680ae.chunk.js",
+    "static/js/227.99f11bd7.chunk.js": "/DecentralizedNews/static/js/227.99f11bd7.chunk.js",
+    "static/js/556.110f3af3.chunk.js": "/DecentralizedNews/static/js/556.110f3af3.chunk.js",
+    "static/js/507.d2124a6c.chunk.js": "/DecentralizedNews/static/js/507.d2124a6c.chunk.js",
+    "static/js/726.9b17033e.chunk.js": "/DecentralizedNews/static/js/726.9b17033e.chunk.js",
+    "static/js/27.40828a7e.chunk.js": "/DecentralizedNews/static/js/27.40828a7e.chunk.js",
+    "static/js/448.6a5e1119.chunk.js": "/DecentralizedNews/static/js/448.6a5e1119.chunk.js",
+    "static/js/300.a895233e.chunk.js": "/DecentralizedNews/static/js/300.a895233e.chunk.js",
+    "static/js/36.b94476d0.chunk.js": "/DecentralizedNews/static/js/36.b94476d0.chunk.js",
+    "index.html": "/DecentralizedNews/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.d73d0f6c.css",
+    "static/js/main.ca0ef24a.js"
+  ]
+}
