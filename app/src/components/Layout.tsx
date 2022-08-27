@@ -2,6 +2,7 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui"
 import styled from "styled-components"
 
 const Navbar = styled('div')`
+    position: absolute; 
     background-color: #333a;
     border-color: #ffffff33;
     border-radius: 30px;
@@ -48,8 +49,8 @@ const CustomSolanaWalletMultiButton = styled(WalletMultiButton)`
 export const Layout: React.FC = () => {
     return (
         <Navbar>
-            <Title href={process.env.PUBLIC_URL}>Decentralized news</Title>
-            <Link href={process.env.PUBLIC_URL.concat("/NewArticle")}>Create new article</Link>
+            <Title href={process.env.PUBLIC_URL.concat("/#")}>Decentralized news</Title>
+            <Link href={process.env.PUBLIC_URL.concat("/#/NewArticle")}>Create new article</Link>
             <CustomSolanaWalletMultiButton />
         </Navbar>
     )
