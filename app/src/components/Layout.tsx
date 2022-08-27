@@ -94,7 +94,7 @@ export const Layout: React.FC = () => {
                 <CustomSolanaWalletMultiButton />
             </Navbar>
             <FooterLayout>
-                <FooterText>Solana Testnet</FooterText>
+                <FooterText>Solana Devnet</FooterText>
                 <FooterLink href="https://github.com/RostislavLitovkin/DecentralizedNews">Contribute</FooterLink>
             </FooterLayout>
         </>
