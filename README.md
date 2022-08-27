@@ -16,7 +16,7 @@ The program is deployed on Devnet.
 
 - image input when writing new article - currently supports only entering image link
 - ideally allowing the user to save the image to IPFS of some sort directly
-- adding more metadata to the article it-self - like a timestamp, creater etc... or if possible, fetching it from the blockchain data it-self
+- adding more metadata to the article itself - like a timestamp, creater etc... or if possible, fetching it from the blockchain data itself
 - credits page
 - proper governance of some sort
 
