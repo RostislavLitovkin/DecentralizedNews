@@ -2,6 +2,8 @@
 
 Platform for saving news articles onto a Solana blockchain.
 
+Available here: https://rostislavlitovkin.github.io/DecentralizedNews/#
+
 ### !! Disclaimer !!
 
 this is just **MVP** and will be continually improved.
