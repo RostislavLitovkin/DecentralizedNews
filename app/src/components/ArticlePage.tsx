@@ -12,7 +12,6 @@ const Layout = styled('div')`
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden;
 `
 
 const TitleImage = styled('img')`
@@ -28,13 +27,15 @@ const Line = styled('hr')`
 `
 
 const Title = styled('div')`
-    font-size: 55px;
+    font-size: min(55px, calc(80vw / (1200 / 55)));
     font-weight: 900;
     color: white;
 `
 
 const Description = styled('div')`
-    font-size: 35px;
+    font-size: min(35px, calc(80vw / (1200 / 35)));
+    width: 85vw;
+    max-width: 1200px;
     font-weight: 500;
     color: white;
 `

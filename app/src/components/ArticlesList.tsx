@@ -12,9 +12,6 @@ const ListLayout = styled('div')`
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 100%;
-    overflow: scroll;
-    overflow-x: hidden;
 `
 
 export const ArticlesList: React.FC = () => {
@@ -69,7 +66,6 @@ export const ArticlesList: React.FC = () => {
             const articleData = await program.account.article.fetch(articlePDA);
 
             articles.push(<ArticleThumbnail key={i} title={articleData.title} image={articleData.image} index={i}></ArticleThumbnail>)
-            articles.push(<br key={i + 10000}></br>)
         }
 
         console.log(articles.length)
