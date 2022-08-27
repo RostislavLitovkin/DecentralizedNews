@@ -1,6 +1,6 @@
 # DecentralizedNews
 
-Platform for saving news articles onto a Solana blockchain.
+Platform for saving news articles on Solana blockchain.
 
 Available here: https://rostislavlitovkin.github.io/DecentralizedNews/#
 
