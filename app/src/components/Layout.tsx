@@ -1,5 +1,6 @@
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui" 
 import styled from "styled-components"
+import { MAIN } from "../constants/colors"
 
 const Navbar = styled('div')`
     position: absolute; 
@@ -43,7 +44,7 @@ const Link = styled('a')`
 const CustomSolanaWalletMultiButton = styled(WalletMultiButton)`
     border-radius: 30px;
     height: 60px;
-    background-color: #42f5a1;
+    background-color: ${MAIN};
     font-size: min(20px, calc(80vw / 40));
     &:hover {
         background-color: #42f5a1;

@@ -5,6 +5,7 @@ import { SolanaWallet } from './components/SolanaWallet';
 import styled from 'styled-components';
 import { NavbarTopEmptySpace } from './styled/NavbarTopEmptySpace';
 import { FooterBottomEmptySpace } from './styled/FooterBottomEmptySpace';
+import { MAIN } from './constants/colors';
 
 const BackgroundLayout = styled('div')`
   display: flex;
@@ -28,7 +29,7 @@ const ScrollLayout = styled('div')`
     background-color: #222;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #2fd2c1;
+    background-color: ${MAIN};
   }
   
 `
