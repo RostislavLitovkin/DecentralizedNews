@@ -16,6 +16,7 @@ The program is deployed on Devnet.
 - ideally allowing the user to save the image to IPFS of some sort directly
 - adding more metadata to the article it-self - like a timestamp, creater etc... or if possible, fetching it from the blockchain data it-self
 - credits page
+- proper governance of some sort
 
 ### Setup:
 
