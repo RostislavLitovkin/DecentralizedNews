@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'react-app-polyfill/stable';
+import { SolanaWallet } from './components/SolanaWallet';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-<React.StrictMode>
-    <App />
+  <React.StrictMode>
+    <SolanaWallet>
+      <App />
+    </SolanaWallet>
   </React.StrictMode>
 );
 
