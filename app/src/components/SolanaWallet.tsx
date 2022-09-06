@@ -10,9 +10,34 @@ import {
 } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 import { createDefaultAddressSelector, createDefaultAuthorizationResultCache, SolanaMobileWalletAdapter } from '@solana-mobile/wallet-adapter-mobile';
+import * as anchor from "@project-serum/anchor"
+import { PublicKey } from "@solana/web3.js"
 
 // Default styles that can be overridden by your app
 require('@solana/wallet-adapter-react-ui/styles.css');
+
+export class AnchorWallet implements anchor.Wallet {
+
+    constructor(readonly payer: anchor.web3.Keypair) {
+        this.payer = payer
+    }
+
+    async signTransaction(tx: anchor.web3.Transaction): Promise<anchor.web3.Transaction> {
+        tx.partialSign(this.payer);
+        return tx;
+    }
+
+    async signAllTransactions(txs: anchor.web3.Transaction[]): Promise<anchor.web3.Transaction[]> {
+        return txs.map((t) => {
+            t.partialSign(this.payer);
+            return t;
+        });
+    }
+
+    get publicKey(): PublicKey {
+        return this.payer.publicKey;
+    }
+}
 
 export const SolanaWallet: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.

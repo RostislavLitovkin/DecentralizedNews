@@ -1,5 +1,5 @@
 import { AnchorProvider, Program } from "@project-serum/anchor"
-import { useConnection, useWallet } from "@solana/wallet-adapter-react"
+import { useConnection } from "@solana/wallet-adapter-react"
 import { useCallback, useEffect, useState } from "react"
 import styled from "styled-components"
 import { ArticleDto } from "../dto/ArticleDto"
@@ -7,6 +7,7 @@ import { IDL } from "../idl/idl"
 import { DecentralizedNews } from "../types/decentralized_news"
 import * as anchor from "@project-serum/anchor";
 import { useParams } from "react-router-dom"
+import { AnchorWallet } from "./SolanaWallet"
 
 const Layout = styled('div')`
     display: flex;
@@ -43,26 +44,24 @@ const Description = styled('div')`
 export const ArticlePage: React.FC = () => {
     const [article, setArticle] = useState<ArticleDto>()
     const { connection } = useConnection();
-    const { publicKey, signAllTransactions, signTransaction } = useWallet();
     const params = useParams()
     const [program, setProgram] = useState<Program<DecentralizedNews>>();
 
     useEffect(() => {
-        if (!(publicKey && signAllTransactions && signTransaction && process.env.REACT_APP_PROGRAM_ID)) {
-            if (!publicKey) console.log("No pubkey")
+        if (!(process.env.REACT_APP_PROGRAM_ID)) {
             console.log("Failed")
             return
         }
 
         const provider = new AnchorProvider(
-            connection, { publicKey: publicKey, signAllTransactions: signAllTransactions, signTransaction: signTransaction }, { preflightCommitment: 'recent' },
+            connection, new AnchorWallet(anchor.web3.Keypair.generate()), { preflightCommitment: 'recent' },
         )
 
         // IDK, Solana is just buggy mess, so this was the only workaround to get it working (basically does nothing, just parses it correctly)
         const a = JSON.stringify(IDL)
         const b = JSON.parse(a)
         setProgram(new Program<DecentralizedNews>(b, process.env.REACT_APP_PROGRAM_ID, provider));
-    }, [publicKey, signAllTransactions, signTransaction, connection])
+    }, [connection])
     
 
     const loadArticle = useCallback(async () => {

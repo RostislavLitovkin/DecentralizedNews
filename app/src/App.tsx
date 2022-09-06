@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import { NavbarTopEmptySpace } from './styled/NavbarTopEmptySpace';
 import { FooterBottomEmptySpace } from './styled/FooterBottomEmptySpace';
 import { MAIN } from './constants/colors';
-import { useWallet } from '@solana/wallet-adapter-react';
-import { ErrorPage } from './components/ErrorPage';
 
 const BackgroundLayout = styled('div')`
   display: flex;
@@ -36,16 +34,14 @@ const ScrollLayout = styled('div')`
 `
 
 function App() {
-  const { connected } = useWallet();
   return (
       <BackgroundLayout>
         <Layout />
-        { connected ? <ScrollLayout>
+        <ScrollLayout>
           <NavbarTopEmptySpace />
           <Router />
           <FooterBottomEmptySpace />
-        </ScrollLayout> : 
-        <ErrorPage message='Please connect your wallet'/>}
+        </ScrollLayout>
       </BackgroundLayout>
   );
 }

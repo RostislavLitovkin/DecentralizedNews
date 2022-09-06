@@ -12,6 +12,7 @@ import { FormikInput } from "./FormikInput";
 import * as anchor from "@project-serum/anchor";
 import { SystemProgram, PublicKey } from "@solana/web3.js"
 import { useNavigate } from "react-router-dom";
+import { ErrorPage } from "./ErrorPage";
 
 const Layout = styled('div')`
     width: 100vw;
@@ -54,6 +55,7 @@ export const NewArticlePage: React.FC = () => {
     const navigate = useNavigate()
     const { publicKey, signAllTransactions, signTransaction } = useWallet();
     const [program, setProgram] = useState<Program<DecentralizedNews>>();
+    const { connected } = useWallet();
 
     useEffect(() => {
         if (!(publicKey && signAllTransactions && signTransaction && process.env.REACT_APP_PROGRAM_ID)) {
@@ -75,6 +77,7 @@ export const NewArticlePage: React.FC = () => {
 
 
     return (
+        <>{ connected ? 
         <Layout>
             <Formik<ArticleDto>
                 initialValues={{
@@ -127,5 +130,8 @@ export const NewArticlePage: React.FC = () => {
                 </form>)}
             </Formik>
         </Layout>
+        : 
+        <ErrorPage message='Please connect your wallet'/>}
+        </>
     )
 }
