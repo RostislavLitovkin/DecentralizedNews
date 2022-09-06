@@ -1,25 +1,45 @@
 # DecentralizedNews
 
-Platform for saving news articles onto a Solana blockchain.
+Platform for saving news articles on Solana blockchain.
 
+Available here: https://rostislavlitovkin.github.io/DecentralizedNews/#
 
+### !! Disclaimer !!
 
-!! Disclaimer !!
-
-this is just MVP and will be continually improved.
-
-There are many things to improve, like proper error handling, better looking UI etc.
+this is just **MVP** and will be continually improved.
 
 Currently provides all the basic functionality needed.
 
 The program is deployed on Devnet.
 
+### Things to improve the most:
 
+- image input when writing new article - currently supports only entering image link
+- ideally allowing the user to save the image to IPFS of some sort directly
+- adding more metadata to the article itself - like a timestamp, creater etc... or if possible, fetching it from the blockchain data itself
+- credits page
+- proper governance of some sort
 
-[How to run]:
+### Setup:
 
+To run the already set front-end:
+```
 cd app
-
 npm install
-
 npm start
+```
+
+To build the Solana program (smart-contract):
+```
+anchor build
+```
+
+To test the Solana program:
+```
+anchor test
+```
+
+To deploy the Solana program:
+```
+anchor deploy
+```
