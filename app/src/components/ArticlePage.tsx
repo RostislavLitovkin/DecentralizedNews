@@ -13,6 +13,7 @@ const Layout = styled('div')`
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 `
 
 const TitleImage = styled('img')`
